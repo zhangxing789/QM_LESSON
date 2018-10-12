@@ -21,6 +21,7 @@
     EditInPlaceField.prototype.createElement = function() {
         this.containerElement = document.createElement('div');
         this.parentElement.appendChild(this.containerElement);
+
         this.staticElement = document.createElement('span');
         this.containerElement.appendChild(this.staticElement);
         this.staticElement.innerHTML = this.value;
@@ -48,7 +49,7 @@
         this.staticElement.addEventListener('click', function() {
             that.convertToEditable();
         });
-        this.staticElement.addEventListener('click', function() {
+        this.cancelButton.addEventListener('click', function() {
             that.convertToText();
         });
         this.saveButton.addEventListener('click', function() {
