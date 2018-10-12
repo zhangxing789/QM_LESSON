@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const friends = ['lizhijian', 'tangtang'];
+        friends.push('wumian');
+        friends.push('nieyao');
+        friends.push('wuyihong')
+        console.log(friends);
+        //friends = 404;
+        const num = 1;
+       // num = 2;
+
+        const key = 'abc123';
+        let points = 50;
+        let winner = false;
+
+        const person = {
+            name: 'Wes',
+            age: 20
+        }
+        person.points = points;
+        console.log(person);
+        const wes = Object.freeze(person);
+        console.log(wes);
+        wes.nickname = 'bos';
+        console.log(wes); 
+
+
+       /*  function a() {
+            console.log('fdfdf', pizza);
+            const pizza = 'Deep Dish';
+        }
+        a(); */
+    </script>
+    
+</body>
+</html>

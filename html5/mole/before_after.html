@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+    .box {
+        position: relative;
+    }
+
+
+
+    .box::before, .box::after{
+        display: block;
+        line-height: 2;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #333333;
+    }
+    .box::before{
+        content: "";
+        background: red;
+        top: 0;
+    }
+    .box::after {
+        content: "";;
+        background: green;
+        bottom: 0;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        我是一个盒子
+    </div>
+    <script>
+    const holes = document.querySelector('.hole');
+    const scoreBoard = document.querySelector('.score');
+    const moles = document.querySelector('.mole');
+    let score = 0;
+    let lasthole ; 
+    //状态 上一试哪个洞 新随机生成的一样的话 再随机一次，否则 lasthole = 刚生成随机数
+    let timeup = false; // 游戏结束
+    let isPlaying = false; //游戏正在进行
+
+    function startGame(){
+        if(isPlaying) return;
+        scoreBoard.textContent = 0;
+        timeup = false;
+        score = 0;
+        setTimeout(()=>{
+            timeup = true;
+            isPlaying = false;
+            alert('游戏结束了');
+
+        },20000)
+    }
+
+
+
+    </script>
+</body>
+</html>
