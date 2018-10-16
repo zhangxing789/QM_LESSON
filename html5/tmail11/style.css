@@ -1,0 +1,75 @@
+/* 10rem 默认手机宽度
+1rem = 1/10 宽度 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+
+}
+
+.html_content, .item-section {
+    height: 100%;
+}
+
+.item-section {
+    background-color: red;
+    position: relative;
+}
+
+.item-section_header img {
+    width: 10rem;
+}
+ul, li {
+    list-style: none;
+}
+.item-section ul {
+    padding: 0.133333rem;
+}
+.flag {
+    display: table;
+    width: 100%;
+    margin-bottom: 1px;
+    background: #ffffff;
+}
+.flag .flag-item {
+    display: table-cell;
+    padding: 0.16rem 0;
+    vertical-align: top;
+    background: #ffffff;
+}
+.flag .flag-item.figure {
+    width: 2.346667rem;
+    height: 2.346667rem;
+}
+.flag .flag-item.figure img {
+    max-width: 100%;
+}
+
+
+/* html {
+    font-size: 37.5px;
+}
+
+html, body {
+    height: 100%;
+
+}
+
+body {
+    font-size: 0;
+}
+.row {
+    height: 100%;
+}
+.col-1 {
+    display: inline-block;
+    width: 1rem;
+    height: 100%;
+    background: #000;
+}
+.co1-1:nth-child(odd) {
+    background: pink;
+} */
