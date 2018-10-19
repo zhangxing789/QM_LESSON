@@ -8,7 +8,7 @@ Page({
     hasList: false,
     carts: [],
     totalPrice: 0,
-    selectAllStatus: true
+    selectAllStatus: false
   },
 
   /**
@@ -24,13 +24,9 @@ Page({
   onReady: function () {
 
   },
-
-  selectedList: function(e) {
-    const index = e.currentTarget.dataset.index;
-    const carts = this.data.carts;
-    carts[index].selected = !carts[index].selected;
+  getAllSelectStatus: function(carts) {
     let selectedCount = 0;
-    for (let cart of carts) {
+    for(let cart of carts) {
       if (cart.selected) {
         selectedCount++
       }
@@ -38,14 +34,65 @@ Page({
     let isAllSelected = false;
     if (selectedCount == carts.length)
       isAllSelected = true
-
+    return isAllSelected;
+  },
+  selectedList: function(e) {
+    const index = e.currentTarget.dataset.index;
+    const carts = this.data.carts;
+    carts[index].selected = !carts[index].selected;
+    
+    let isAllSelected = this.getAllSelectStatus(carts);
+    
     this.setData({
       carts,
       selectAllStatus: isAllSelected
     })
   },
 
-  deleteList: function(e) {
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    setTimeout(() => {
+      this.setData({
+
+        hasList: true,
+        carts: [
+          {
+            id: 1, title: 'iphone MX',
+            image: '/image/s5.png',
+            num: 1, price: 867,   selected: true
+          },
+          {
+            id: 2, title: 'ipad',
+            image: '/image/s6.png',
+            num: 1, price: 450, selected: true
+          },
+          {
+            id: 3, title: '刀',
+            image: '/image/s4.png',
+            num: 1, price: 4, selected: false
+          }
+        ]
+      })
+      this.getTotalPrice();
+      
+    }, 1000);
+  },
+  getTotalPrice: function() {
+    let carts = this.data.carts;
+    let total = 0;
+    for (let i = 0; i < carts.length; i++) {
+      if (carts[i].selected) {
+        total += carts[i].num * carts[i].price;
+      }
+    }
+    this.setData({
+      totalPrice: total.toFixed(2)
+    })
+  },
+
+  deleteList (e) {
     let index = e.currentTarget.dataset.index;
     let carts = this.data.carts;
     carts = carts.filter((cart, i) => {
@@ -55,57 +102,13 @@ Page({
       carts
     })
     if (!carts.length) {
-      this.setData ({
+      this.setData({
         hasList: false
       })
     }
     this.getTotalPrice();
   },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    setTimeout(() => {
-      this.setData({
-        hasList: true,
-        carts: [
-          {
-          id: 1, title: 'iphone MX',
-          image: '/image/s5.png',
-          num: 1, price: 867,
-          selected: true
-          },
-          {
-          id: 2, title: 'ipad',
-          image: '/image/s6.png',
-          num: 1, price: 450,
-          selected: true
-          },
-          {
-          id: 3, title: '刀',
-          image: '/image/s4.png',
-          num: 1, price: 4,
-          selected: false
-          }
 
-        ]
-      })
-      this.getTotalPrice();
-    }, 1000);
-  },
-  getTotalPrice: function() {
-    let carts = this.data.carts;
-    let total = 0;
-    for (let i = 0;i < carts.length; i++) {
-      if (carts[i].selected) {
-        total += carts[i].num * carts[i].price;
-      }
-    }
-    this.setData({
-      totalPrice: total.toFixed(2)
-    })
-  },
-  
   /**
    * 生命周期函数--监听页面隐藏
    */
