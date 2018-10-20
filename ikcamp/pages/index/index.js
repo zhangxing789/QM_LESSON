@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+import config from '../../utils/config'
 const app = getApp()
 
 Page({
@@ -22,7 +23,23 @@ Page({
       url: '../logs/logs'
     })
   },
+  showDetail: function(e) {
+    let detail = e.currentTarget.dataset;
+    let item = dataset && dataset.item;
+    let contentId = item.contentId || 0;
+    wx.navigateTo({
+      url: `../detail/detail?contentId=${contentId}`
+    });
+  },
+
   onLoad: function () {
+    let title = config.defaultBarTitle;
+    wx.setNavigationBarTitle({
+      title,
+      success: function(res) {
+
+      }
+    })
     this.requestArticle()
   },  
   
