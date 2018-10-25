@@ -1,0 +1,21 @@
+{
+  "name": "npm_hello_script",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint:js": "eslint *.js",
+    "lint:css": "stylelint *.less",
+    "test": "npm-run-all --parallel lint:*"
+  },
+  "keywords": [],
+  "author": "zhangxing789 <2930281671@qq.com> (https://github.com/zhangxing789)",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.3"
+  }
+}
