@@ -1,0 +1,55 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/like/like",
+    "pages/discovery/discovery",
+    "pages/mine/mine",
+    "pages/cart/cart",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ff4444",
+    "navigationBarTitleText": "有赞精选",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#ff6700",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "text": "精选",
+        "pagePath": "pages/index/index",
+        "iconPath": "./images/icons/home.png",
+        "selectedIconPath": "./images/icons/home_active.png"
+      },
+      {
+        "text": "发现",
+        "pagePath": "pages/discovery/discovery",
+        "iconPath": "./images/icons/discovery.png",
+        "selectedIconPath": "./images/icons/discovery_active.png"
+      },
+      {
+        "text": "喜欢",
+        "pagePath": "pages/like/like",
+        "iconPath": "./images/icons/like.png",
+        "selectedIconPath": "./images/icons/like_active.png"
+      },
+      {
+        "text": "购物车",
+        "pagePath": "pages/cart/cart",
+        "iconPath": "./images/icons/cart.png",
+        "selectedIconPath": "./images/icons/cart_active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "./images/icons/mine.png",
+        "selectedIconPath": "./images/icons/mine_active.png"
+      }
+    ]
+  }
+}

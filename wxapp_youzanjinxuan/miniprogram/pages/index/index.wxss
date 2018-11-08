@@ -1,0 +1,70 @@
+@import "../../vant-weapp/search/index.wxss";
+
+.section {
+    width: 100%;
+}
+/*顶部搜索栏及两边icon的样式*/
+.searchBar {
+    display: flex;
+    justify-content: center;
+    height: 100rpx;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eeeeee;
+}
+/*左边样式*/
+.searchBar-left {
+    position: absolute;
+    width: 10%;
+    height: 100rpx;
+    top: 0;
+    left: 0;
+}
+.searchBar-left text {
+    font-size: 20rpx;
+    color: #818181;
+    position: absolute;
+    top: 60rpx;
+    left: 20rpx;
+}
+.searchBar-left .search_icon {
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    width: 44rpx;
+    height: 44rpx;
+}
+/*中间搜索栏样式 由于van-search有自带背景颜色用!important干掉*/
+.searchBar-center {
+    width: 80%;
+}
+.searchBar-center .van-search {
+    background-color: #fff!important;
+}
+.searchBar-center .van-search .van-cell {
+    margin-top: 13rpx;
+    background-color: #ededed;
+    border-radius: 30rpx;
+}
+/*右边样式*/
+.searchBar-right {
+    position: absolute;
+    width: 10%;
+    height: 100rpx;
+    right: 0;
+    top: 0;
+}
+.searchBar-right text {
+    font-size: 20rpx;
+    color: #818181;
+    position: absolute;
+    top: 60rpx;
+    right: 25rpx;
+}
+.searchBar-right .search_icon {
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+

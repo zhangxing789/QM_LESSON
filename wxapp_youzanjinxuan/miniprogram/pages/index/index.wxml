@@ -1,0 +1,21 @@
+<view class="container">
+    <!--  顶部搜索栏 -->
+    <view class="section searchBar">
+        <view class="searchBar-left">
+            <image src="../../images/searchBar_icons/category.png" mode="aspectFill" class="search_icon"/>
+            <text>分类</text>
+        </view>
+        <view class="searchBar-center">            
+            <van-search
+             v-model="value"
+             placeholder="保暖"
+            ></van-search>
+        </view>
+        <view class="searchBar-right">
+            <image src="../../images/searchBar_icons/message.png" mode="aspectFill" class="search_icon"/>
+            <text>消息</text>
+        </view>
+    </view>
+
+    
+</view>
