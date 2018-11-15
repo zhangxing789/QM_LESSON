@@ -1,7 +1,12 @@
 @import "../../vant-weapp/search/index.wxss";
 
+.container {
+    background-color: #eeeeee;
+}
+
 .section {
     width: 100%;
+    background-color: #fff;
 }
 /*顶部搜索栏及两边icon的样式*/
 .searchBar {
@@ -9,7 +14,7 @@
     justify-content: center;
     height: 100rpx;
     box-sizing: border-box;
-    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 2rpx;
 }
 /*左边样式*/
 .searchBar-left {
@@ -68,3 +73,29 @@
     height: 50rpx;
 }
 
+/*轮播图样式*/
+
+.slideshow {
+    height: 350rpx;
+}
+.swipebox {
+    width: 94%;
+    display: flex;
+    margin-left: 3%;
+    
+}
+.swipe-header {
+    height: 50rpx;
+    line-height: 50rpx;
+    
+}
+.swipe-header_left .title {
+    
+    font-size: 30rpx;
+}
+.swipe-header_left .des {
+    font-size: 20rpx;
+    color: #999999;
+    
+}
+ 

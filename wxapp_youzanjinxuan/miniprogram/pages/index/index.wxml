@@ -17,5 +17,27 @@
         </view>
     </view>
 
-    
+    <!-- 首页轮播图 -->
+    <view class="section slideshow">
+        <view class="swipebox">
+            <view class="swipe-header">
+                <view class="swipe-header_left">
+                    <text class="title">今日推荐</text>
+                    <text class="des">每天都有新鲜事</text>
+                </view>
+                <view class="swipe-header_right">
+                    <text class="currentimg"></text>
+                    <text class="countsimg"></text>
+                </view>
+            </view>
+            <swiper class="swipe" indicator-dots="{{indicator_dots}}" indicator-active-color="{{indicator_active_color}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                <block wx:for="{{index_swipe}}" wx:key="{{index}}">
+                    <swiper-item>
+                        <image src="{{item.swipe_url}}" mode="widthFix" class="swipe-image" data-id="{{item.id}}"/>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+    </view>
+
 </view>
