@@ -1,0 +1,60 @@
+<template>
+    <view wx:if="{{show}}">
+        <view wx:if="{{type === 0}}">
+            <view class="pop-alert-box">
+                <image src="../images/icon_alert.png" class="icon_alert" @tap.stop="callback" />
+                <i class="iconfont icon-close" @tap.stop="close"></i>
+            </view>
+        </view>
+        <view wx:else>
+      <view class="pop-alert-box dialog">
+        <view class="alert-content-box">
+          <view class="alert-content">
+            <image src="../images/icon_alert.png" class="icon_alert_dialog"/>
+            <view class="title">恭喜获得红包</view>
+            <view class="title-doc">恭喜获得一张卡券，已发放至该账号</view>
+          </view>
+          <view class="btn_box">
+            <view class="button type_red"  @tap.stop="callback">点击领取</view>
+          </view>
+        </view>
+          <i class="iconfont icon-close" @tap.stop="close"></i>
+      </view>
+    </view>
+    <view class="alert_mask" @tap.stop="close">
+
+    </view>
+    </view>
+</template>
+<script>
+import wepy from 'wepy';
+export default class Bombscreen extends wepy.component{
+    //自身的数据状态，
+    data = {
+
+    }
+    //由父组件或page传入 数据请求一般由外界做。组件内部不负责数据请求 数据流向
+    props = {
+        show: {
+            default: false
+        },
+        type: {
+            default: 0
+        }
+    }
+
+    methods = {
+
+        callback () {
+            this.show = false;
+            this.$emit("callback");
+        },
+        close () {
+            this.show = false;
+            //子组件向父组件传递事件
+            this.$emit("close");
+        }
+
+    }
+}
+</script>
