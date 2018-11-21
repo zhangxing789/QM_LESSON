@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "modeule": "es6",
+        "target": "es5"
+    }
+}
