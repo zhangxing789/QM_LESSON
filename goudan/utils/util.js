@@ -14,6 +14,30 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const $get = (url, data = {}) => {
+  return new Promise ((resolve, reject) => {
+    wx.request({
+    url: url,
+    data: data,
+    method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+    // header: {}, // 设置请求的 header
+    success: function(res){
+      resolve(res)
+      // success
+    },
+    fail: function() {
+      reject()
+      // fail
+    },
+    complete: function() {
+      // complete
+    }
+  })
+  })
+  
+}
+
 module.exports = {
+  $get,
   formatTime: formatTime
 }
