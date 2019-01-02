@@ -19,4 +19,4 @@ context 分四部
 - 后代组件this.context获取数据
 
 太烦了  不是react 数据流的语法的烦 context api代码的重复，dry don‘t repeat yourself
-connect react-redux HOC
+connect react-redux HOC 
