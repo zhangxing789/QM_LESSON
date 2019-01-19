@@ -29,5 +29,16 @@ book.douban.com movie.douban.com
     1. 浏览器不允许跨域的读操作
     2. 跨域资源嵌入 img src script[src]
     前后端
+    优势：兼容性好
+    缺点：GET
 
   - cors
+   W3C推荐的一种新的官方方案，服务器端支持XMLHttpRequest的跨域请求
+   优点：只在后端就能解决 简单的
+   非简单 POST DELETE 
+  - 白名单 
+   origin 请求源
+   maxAage 最大请求相应时间
+   allowMethods: ['GET', 'POST', 'DELETE'], //支持请求方法
+    allowMethods: ['content-type', 'Authorization', 'Accept'], // 请求头
+    crendentials: true //cookie
