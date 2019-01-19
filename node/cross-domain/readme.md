@@ -12,3 +12,22 @@
     cookie失效截止时间
   5. overwrite
     是否允许被覆盖
+
+跨域
+同源：协议 域名 端口 都一致
+同源策略 浏览器会拒绝这次请求
+
+1 A 网银网站 Cookie
+2 QQ 澳门赌场 向网银cookie 发出读的请求
+3 同源策略
+
+book.douban.com movie.douban.com
+前端工程化进化，前后端分离 vue 8080 koa api 3000
+
+
+  - jsonp
+    1. 浏览器不允许跨域的读操作
+    2. 跨域资源嵌入 img src script[src]
+    前后端
+
+  - cors
